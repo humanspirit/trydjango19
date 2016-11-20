@@ -8,9 +8,9 @@ from .models import Post
 def post_create(request):
     return HttpResponse("<h1>Hello Create </h1>")
 
-def post_detail(request):
+def post_detail(request, id=None):
     #instance = Post.objects.get(id=3)
-    instance = get_object_or_404(Post, id=2)
+    instance = get_object_or_404(Post, id=id)
     content_data = {
         "title" : "Detail",
         "instance" : instance
