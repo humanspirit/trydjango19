@@ -14,13 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from . import views
+from .views import (
+    post_create,
+    post_detail,
+    post_list,
+    post_delete,
+    post_update,
+)
 
 urlpatterns = [
-    url(r'^create/$',views.post_create),
-    url(r'^(?P<id>\d+)/$',views.post_detail, name = 'detail'),
-    url(r'^list/$',views.post_list),
-    url(r'^delete/$',views.post_delete),
-    url(r'^update$',views.post_update),
+    url(r'^create/$',post_create),
+    url(r'^(?P<id>\d+)/$',post_detail, name = 'detail'),
+    url(r'^list/$',post_list),
+    url(r'^delete/$',post_delete),
+    url(r'^(?P<id>\d+)/edit/$',post_update, name= 'update'),
 
 ]
