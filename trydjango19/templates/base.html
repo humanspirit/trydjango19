@@ -1,7 +1,9 @@
 <!-- DOCTYPE HTML-->
+{%load static %}
 <html>
 <head>
 <title>{%block head_title %} TryDjango19 {% endblock head_title %}</title>
+<link rel='stylesheet' href="{%static 'css/base.css' %}"  />
 </head>
 <body>
 <div class="messages">{% include "messages_display.html" %}</div>
