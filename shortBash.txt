@@ -1,0 +1,1 @@
+PS1="($(basename "$VIRTUAL_ENV"))"
